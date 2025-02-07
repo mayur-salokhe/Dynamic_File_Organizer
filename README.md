@@ -6,8 +6,9 @@ The **Dynamic File Organizer** is a Python-based application that helps users or
 ## Features
 - **Organize by File Extension:** Move files to a specified folder based on their extensions.
 - **Organize by Keyword:** Move files to predefined folders based on keywords in filenames (configured via a JSON file).
-- **Graphical User Interface (GUI):** Allows easy folder and config selection.
-- **Multi-Folder Selection & Rules:** Users can define **multiple source folders** instead of just one and set **custom rules** (e.g., PDFs go to "Documents", images to "Pictures").
+- **Graphical User Interface (GUI):** Allows easy folder and config file selection.
+- **Multi-Folder Selection & Custom Rules:** Users can define **multiple source folders** instead of just one and set **custom rules** (e.g., PDFs go to "Documents", images to "Pictures").
+- **Persistent Custom Rules:** Custom extension-based rules are saved in a JSON file (`extension_rules.json`), so they persist between sessions.
 - **Logging:** Records file movements and errors.
 
 ## Requirements
@@ -19,7 +20,6 @@ The **Dynamic File Organizer** is a Python-based application that helps users or
 2. Install required dependencies (Tkinter is included in standard Python installations):
    ```sh
    pip install tk
-   ```
 3. Save the `dynamic_file_organizer.py` script and ensure the `config.json` file is available in the same directory (if using keyword-based organization).
 
 ## Configuration
@@ -32,6 +32,9 @@ For **keyword-based organization**, create a `config.json` file in the same dire
   }
 }
 ```
+## Custom Rules Persistence
+The application saves extension-based custom rules to a file named extension_rules.json in the same directory as the script.
+These rules are automatically loaded when the application starts, ensuring that you do not have to re-enter them every time.
 
 ## Usage
 ### Running the Application
