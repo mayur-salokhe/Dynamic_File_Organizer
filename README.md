@@ -22,7 +22,7 @@ The **Dynamic File Organizer** is a Python-based automation tool that organizes 
 ## Installation
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/dynamic-file-organizer.git
+   git clone https://github.com/mayur-salokhe/Dynamic_File_Organizer.git
    cd dynamic-file-organizer
    ```
 2. **Install dependencies**:
