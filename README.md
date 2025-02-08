@@ -91,7 +91,7 @@ Create a `config.json` file with the following structure to map keywords to fold
 - Provide an option to undo file movements.
 
 ## License
-This project is licensed under the MIT License.
+This project is open-source and available for modification and distribution..
 
 ## Author
 Developed by **Mayur Salokhe**
