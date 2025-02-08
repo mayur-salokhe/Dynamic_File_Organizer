@@ -1,29 +1,42 @@
 # Dynamic File Organizer
 
 ## Overview
-The **Dynamic File Organizer** is a Python-based application that helps users organize files either by **file extensions** or **keywords** found in filenames. It provides a **GUI interface** using Tkinter, making it easy for users to select folders and organize files efficiently. Logging is enabled to keep track of file movements.
+The **Dynamic File Organizer** is a Python-based automation tool that organizes files based on their **extensions** or **keywords** in filenames. It provides a **Graphical User Interface (GUI)** for easy folder selection, rule definition, and persistent automation.
 
 ## Features
-- **Organize by File Extension:** Move files to a specified folder based on their extensions.
-- **Organize by Keyword:** Move files to predefined folders based on keywords in filenames (configured via a JSON file).
-- **Graphical User Interface (GUI):** Allows easy folder and config file selection.
-- **Multi-Folder Selection & Custom Rules:** Users can define **multiple source folders** instead of just one and set **custom rules** (e.g., PDFs go to "Documents", images to "Pictures").
-- **Persistent Custom Rules:** Custom extension-based rules are saved in a JSON file (`extension_rules.json`), so they persist between sessions.
-- **Logging:** Records file movements and errors.
+- **Organize by File Extension** – Move files to specific folders based on extensions (e.g., `.pdf`, `.jpg`, `.txt`).
+- **Organize by Keyword** – Move files to predefined folders based on keywords in filenames.
+- **Multi-Folder Selection** – Users can define multiple source folders for file organization.
+- **Custom Rules** – Users can create extension-based and keyword-based rules for organizing files.
+- **Persistent Rule Storage** – Custom rules are saved in `extension_rules.json` so they persist across sessions.
+- **Graphical User Interface (GUI)** – Built with Tkinter for easy rule setup and execution.
+- **Logging System** – Logs file movements and errors for tracking.
 
 ## Requirements
-- Python 3.x
-- Required libraries: `tkinter`, `shutil`, `os`, `json`, `pathlib`, `datetime`, `logging`
+- **Python 3.x**
+- Required Python libraries:
+  ```sh
+  pip install tk
+  ```
 
 ## Installation
-1. Ensure Python is installed.
-2. Install required dependencies (Tkinter is included in standard Python installations):
+1. **Clone the repository**:
    ```sh
-   pip install tk
-3. Save the `dynamic_file_organizer.py` script and ensure the `config.json` file is available in the same directory (if using keyword-based organization).
+   git clone https://github.com/yourusername/dynamic-file-organizer.git
+   cd dynamic-file-organizer
+   ```
+2. **Install dependencies**:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. **Run the script**:
+   ```sh
+   python dynamic_file_organizer.py
+   ```
 
 ## Configuration
-For **keyword-based organization**, create a `config.json` file in the same directory as the script with the following structure:
+### **Keyword-Based Organization**
+Create a `config.json` file with the following structure to map keywords to folders:
 ```json
 {
   "folders": {
@@ -32,57 +45,57 @@ For **keyword-based organization**, create a `config.json` file in the same dire
   }
 }
 ```
-## Custom Rules Persistence
-The application saves extension-based custom rules to a file named extension_rules.json in the same directory as the script.
-These rules are automatically loaded when the application starts, ensuring that you do not have to re-enter them every time.
+
+### **Persistent Custom Rules**
+- Extension-based rules are stored in `extension_rules.json`.
+- These rules are **automatically loaded** upon application startup.
 
 ## Usage
-### Running the Application
-1. Open a terminal or command prompt and run:
+### **Running the Application**
+1. Launch the script:
    ```sh
    python dynamic_file_organizer.py
    ```
-2. The GUI will open with two tabs:
-   - **Extension Organizer:** Choose source folders, specify file extensions, and select a destination folder.
-   - **Keyword Organizer:** Choose source folders and select a config file with keyword-folder mappings.
+2. The GUI opens with two main tabs:
+   - **Extension Organizer** – Add source folders, define extension rules, and select a default destination folder.
+   - **Keyword Organizer** – Add source folders and use the `config.json` file for keyword-based sorting.
 
-### Organizing by File Extension
-1. Select **one or multiple source folders** (default includes Downloads).
-2. Select the **destination folder** where matched files should be moved.
-3. Enter **file extensions** (comma-separated, e.g., `.pdf, .jpg, .txt`).
-4. Click **Organize by Extension**.
+### **Organizing by File Extension**
+- Select multiple source folders.
+- Define rules by associating extensions with destination folders.
+- Click **"Organize by Extension"** to move files accordingly.
 
-### Organizing by Keyword
-1. Select **one or multiple source folders** (default includes Downloads).
-2. Select the **config file** (JSON format).
-3. Click **Organize by Keyword**.
+### **Organizing by Keyword**
+- Select multiple source folders.
+- Choose a `config.json` file mapping keywords to destination folders.
+- Click **"Organize by Keyword"** to start sorting.
 
 ## Logging
-- Log files are stored in `C:/Download_Folder_Automation/` with filenames like:
+- Log files are stored in `C:/Dyanmic_File_Organizer/` with the format:
   ```
-  download_automation_log_YYYY-MM-DD.log
+  dynamic_file_orgnanizer_log_YYYY-MM-DD.log
   ```
-- Each log entry contains timestamps, file movements, and errors (if any).
+- Each log entry includes timestamps and details of file movements.
 
 ## Troubleshooting
-- If a file isn’t moving:
-  - Ensure the filename matches the specified keyword (for keyword-based organization).
-  - Check the file extension format (for extension-based organization).
-  - Look at the log file for errors.
-- If the application doesn’t start:
-  - Ensure Python and Tkinter are installed.
-  - Check for missing dependencies.
+- **Files Not Moving?**
+  - Ensure filenames match the specified keywords or extensions.
+  - Check the log file for errors.
+- **Application Issues?**
+  - Verify Python and Tkinter are installed.
+  - Ensure required JSON configuration files are available.
 
 ## Future Enhancements
-- Support for scheduling automated file organization.
-- Add a feature to revert moved files.
-- Allow drag-and-drop file selection in the GUI.
+- Add scheduling for automated organization.
+- Implement drag-and-drop functionality for file selection.
+- Provide an option to undo file movements.
 
 ## License
-This project is open-source and available for modification and distribution.
+This project is licensed under the MIT License.
+
+## Author
+Developed by **Mayur Salokhe**
 
 ---
-
-**Author:** Mayur Salokhe  
-**Last Updated:** 2025-02-07
+_If you like this project, consider giving it a ⭐ on GitHub!_
 
